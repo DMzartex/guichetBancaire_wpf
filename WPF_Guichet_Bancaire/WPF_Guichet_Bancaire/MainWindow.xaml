@@ -1,0 +1,18 @@
+﻿<Window x:Class="WPF_Guichet_Bancaire.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Guichet_Bancaire"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel x:Name="stackMenu" Height="100" Width="100" HorizontalAlignment="Left" Orientation="Vertical" VerticalAlignment="Top">
+            <Button Width="100" HorizontalAlignment="Left" x:Name="btnCrediter">Crediter</Button>
+            <Button Width="100" HorizontalAlignment="Left" x:Name="btnVersement">Versement</Button>
+            <Button Width="100" HorizontalAlignment="Left" x:Name="btnRetrait">Retrait</Button>
+            <Button Width="100" HorizontalAlignment="Left" x:Name="btnInfosComptes">Informations</Button>
+        </StackPanel>
+        <Frame x:Name="Main" NavigationUIVisibility="Hidden" Margin="0,80,0,0"/>
+    </Grid>
+</Window>
