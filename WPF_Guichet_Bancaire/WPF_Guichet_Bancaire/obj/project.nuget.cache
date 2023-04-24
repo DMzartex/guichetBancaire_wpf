@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PG7u4zPJ3IGE9epa7uYk0yW2QljzVc1NbiEjmdvJJefkep8y6LV3YVLCNs+oNlaQQI4adWFuxQSfbDJqlK2xJw==",
+  "dgSpecHash": "SNL/i9w0UY33Ogbj+LGNJLmxwzExz8ldZCiRw1VkqjNg3bJ5kUZEzTrvirbWl/Ylu8eWlLbHXd0tuAIZAZUXYA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Doria\\Desktop\\WPF_Guichet_Bancaire\\WPF_Guichet_Bancaire\\WPF_Guichet_Bancaire.csproj",
+  "projectFilePath": "C:\\Users\\Doria\\Desktop\\Cours\\Programmation\\Programmation_6TI\\WPF\\guichetBancaire_wpf\\WPF_Guichet_Bancaire\\WPF_Guichet_Bancaire\\WPF_Guichet_Bancaire.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Doria\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
     "C:\\Users\\Doria\\.nuget\\packages\\k4os.compression.lz4\\1.3.5\\k4os.compression.lz4.1.3.5.nupkg.sha512",

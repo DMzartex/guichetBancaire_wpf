@@ -23,8 +23,7 @@ namespace WPF_Guichet_Bancaire
     /// </summary>
     public partial class MainWindow : Window
     {
-        loginForm loginForm = new loginForm();
-        
+       
         public bool isLoggedIn = false;
         public MainWindow()
         {
@@ -37,15 +36,13 @@ namespace WPF_Guichet_Bancaire
             if (!isLoggedIn)
             {
                 Main.NavigationUIVisibility = NavigationUIVisibility.Hidden; // Cacher la barre de navigation
-                Main.NavigationService.Navigate(new loginForm());
+                Main.Content = new loginForm();
                 stackMenu.Visibility = Visibility.Hidden;
                 Main.Margin = new Thickness(0,0,0,0);
             }
             else if(isLoggedIn)
             {
-                MessageBox.Show("Vous êtes connecté !!!!!!!!!!!!!!!");
-                Main.NavigationUIVisibility = NavigationUIVisibility.Visible;
-                Main.NavigationService.Navigate(new CrediterPage());
+                Main.Content = new CrediterPage();
                 stackMenu.Visibility = Visibility.Visible;
                 Main.Margin = new Thickness(80, 80, 80, 80);
                 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPF_Guichet_Bancaire.@class;
 using WPF_Guichet_Bancaire.model;
+using WPF_Guichet_Bancaire.viewsModel;
 
 namespace WPF_Guichet_Bancaire.Form
 {
@@ -22,6 +25,7 @@ namespace WPF_Guichet_Bancaire.Form
     public partial class loginForm : Page
     {
         Query loginQuery = new Query();
+        public static MySqlDataReader readerInfoUsers;
         public bool isLoggedIn = false;
         public loginForm()
         {
@@ -37,17 +41,18 @@ namespace WPF_Guichet_Bancaire.Form
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
-            
-            isLoggedIn = loginQuery.Login(emailTxtBox.Text, passwordBox.Password);
-            MainWindow mainWindow = new MainWindow();
+            isLoggedIn = loginQuery.Login(emailTxtBox.Text, passwordBox.Password,out readerInfoUsers);
+            MainWindow mainWindow = (MainWindow)App.Current.MainWindow;
             mainWindow.isLoggedIn= isLoggedIn;
+            ViewsModel.createObjetUser(readerInfoUsers);
             mainWindow.checkLogin();
-            mainWindow.InitializeComponent();
         }
 
         public bool IsLoginSuccessful
         {
             get { return isLoggedIn; }
         }
+
+
     }
 }

@@ -6,6 +6,14 @@ namespace WPF_Guichet_Bancaire.@class
 {
     internal class Users
     {
+        private int _id;
+
+        public int Id
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
+
         private string _nom;
 
         public string Nom
@@ -38,12 +46,13 @@ namespace WPF_Guichet_Bancaire.@class
             set { _email = value; }
         }
 
-        public Users(string nom, string prenom, DateTime dateNaissance, string email)
+        public Users(string nom, string prenom, DateTime dateNaissance, string email,int id)
         {
             _nom = nom;
             _prenom = prenom;
             _dateNaissance = dateNaissance;
             _email = email;
+            _id = id;
         }
 
         public string AfficheCaractUsers()
