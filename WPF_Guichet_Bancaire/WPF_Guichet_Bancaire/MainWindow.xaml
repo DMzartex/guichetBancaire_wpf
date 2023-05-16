@@ -7,12 +7,19 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <StackPanel x:Name="stackMenu" Height="100" Width="100" HorizontalAlignment="Left" Orientation="Vertical" VerticalAlignment="Top">
-            <Button Width="100" HorizontalAlignment="Left" x:Name="btnCrediter">Crediter</Button>
-            <Button Width="100" HorizontalAlignment="Left" x:Name="btnVersement">Versement</Button>
-            <Button Width="100" HorizontalAlignment="Left" x:Name="btnRetrait">Retrait</Button>
-            <Button Width="100" HorizontalAlignment="Left" x:Name="btnInfosComptes">Informations</Button>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="90*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Grid.Column="0" Fill="#30336b"/>
+        <StackPanel Grid.Column="0" x:Name="stackMenu"  Height="150" Width="100" HorizontalAlignment="Left" Orientation="Vertical" VerticalAlignment="Top">
+            <Button Width="70" HorizontalAlignment="Left" x:Name="btnCrediter">Crediter</Button>
+            <Button Width="70" HorizontalAlignment="Left" x:Name="btnVersement">Versement</Button>
+            <Button Width="70" HorizontalAlignment="Left" x:Name="btnRetrait">Retrait</Button>
+            <Button Width="70" HorizontalAlignment="Left" x:Name="btnInfoCompte">Infos Compte</Button>
+            <Button Width="70" HorizontalAlignment="Left" x:Name="btnProfil">Profil</Button>
+            <Button Width="70" HorizontalAlignment="Left" x:Name="btnDeconnexion">Deconnexion</Button>
         </StackPanel>
-        <Frame x:Name="Main" NavigationUIVisibility="Hidden" Margin="0,80,0,0"/>
+        <Frame Grid.Column="1" x:Name="Main" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

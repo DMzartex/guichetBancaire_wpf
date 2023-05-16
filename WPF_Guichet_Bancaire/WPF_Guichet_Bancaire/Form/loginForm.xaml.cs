@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPF_Guichet_Bancaire.@class;
 using WPF_Guichet_Bancaire.model;
+using WPF_Guichet_Bancaire.views;
 using WPF_Guichet_Bancaire.viewsModel;
 
 namespace WPF_Guichet_Bancaire.Form
@@ -25,8 +26,9 @@ namespace WPF_Guichet_Bancaire.Form
     public partial class loginForm : Page
     {
         Query loginQuery = new Query();
-        public static MySqlDataReader readerInfoUsers;
+        MySqlDataReader readerInfoUsers;
         public bool isLoggedIn = false;
+        
         public loginForm()
         {
             InitializeComponent();
@@ -43,8 +45,12 @@ namespace WPF_Guichet_Bancaire.Form
         {
             isLoggedIn = loginQuery.Login(emailTxtBox.Text, passwordBox.Password,out readerInfoUsers);
             MainWindow mainWindow = (MainWindow)App.Current.MainWindow;
-            mainWindow.isLoggedIn= isLoggedIn;
-            ViewsModel.createObjetUser(readerInfoUsers);
+            mainWindow.isLoggedIn = isLoggedIn;
+            if (readerInfoUsers.Read())
+            {
+                CreateUserModel createUser = new CreateUserModel();
+                mainWindow.monUser = createUser.createObjetUser(readerInfoUsers);
+            }
             mainWindow.checkLogin();
         }
 

@@ -13,10 +13,13 @@
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
-        <TextBlock Text="Ajouter de l'argent à votre compte bancaire." Grid.Row="0" FontSize="24" HorizontalAlignment="Center"/>
-        <StackPanel Grid.Row="1" x:Name="stackComptes">
-           
+
+        <Rectangle Grid.Row="0" Fill="#130f40"/>
+        <TextBlock Text="Ajouter de l'argent à votre compte bancaire." Grid.Row="0" FontSize="24" HorizontalAlignment="Center" Foreground="White"/>
+        <StackPanel Grid.Row="1" x:Name="stackComptes" Background="#30336b">
+            <TextBlock FontSize="16" Margin="20,10,0,0" Foreground="White">Entrez le montant que vous voulez ajouter sur votre compte bancaire :</TextBlock>
+            <TextBox x:Name="txtMontantAjt" Width="300" HorizontalAlignment="Left" Margin="20,10,0,0"/>
+            <Button x:Name="btnCrediter" Content="Ajouter" Width="100" HorizontalAlignment="Left" Margin="20,10,0,0"/>
         </StackPanel>
     </Grid>
 </Page>

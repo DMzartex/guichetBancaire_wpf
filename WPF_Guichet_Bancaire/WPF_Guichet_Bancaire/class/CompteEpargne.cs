@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 using WPF_Guichet_Bancaire.@class;
+using WPF_Guichet_Bancaire.model;
 
 namespace WPF_Guichet_Bancaire.@class
 {
     public class CompteEpargne : CompteBancaire
     {
+
         private double _tauxInteret;
 
         public double TauxInteret
@@ -15,8 +17,9 @@ namespace WPF_Guichet_Bancaire.@class
             set { _tauxInteret = value; }
         }
 
-        public CompteEpargne(string numeroCompte, string nomPropri, string prenomPropri, double solde, string typeCompte, double tauxInteret)
+        public CompteEpargne(int idCompte,string numeroCompte, string nomPropri, string prenomPropri, double solde, string typeCompte, double tauxInteret)
         {
+            _idCompte = idCompte;
             _numeroCompte = numeroCompte;
             _nomPropri = nomPropri;
             _prenomPropri = prenomPropri;
@@ -27,9 +30,16 @@ namespace WPF_Guichet_Bancaire.@class
 
         public override bool VerifSomme(double somme)
         {
-            if (Solde >= somme)
+            if(Solde > 0)
             {
-                return true;
+                if ((Solde / 2) >= somme)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {
@@ -37,27 +47,22 @@ namespace WPF_Guichet_Bancaire.@class
             }
         }
 
-        public override string Versement(CompteBancaire compteBancaire, double sommeVerse)
+        public override string Versement(CompteBancaire compteCourant, double sommeVerse)
         {
-            string result;
+            Query query = new Query();
+            string result = "";
 
             if (VerifSomme(sommeVerse))
             {
-                if (compteBancaire.TypeCompte == "Courant")
-                {
-                    compteBancaire.Solde += sommeVerse;
-                    Solde -= sommeVerse;
-                    result = "Votre virement de " + sommeVerse + " euros vers votre compte épargne " + compteBancaire.NumeroCompte
-                        + " à été effectué avec succès";
-                }
-                else
-                {
-                    result = "Vous ne pouvez envoyer de l'argent que vers votre ou vos comptes courant";
-                }
+                compteCourant.Solde += sommeVerse;
+                Solde -= sommeVerse;
+                query.modifSoldeCompteCourant(compteCourant.IdCompte, compteCourant.Solde);
+                query.modifSoldeCompteEpargne(IdCompte, Solde);
+                result = "Le versement de : " + sommeVerse + " à bien été effectué !";
             }
             else
             {
-                result = "Votre solde est insufisant !";
+                result = "Le versement de : " + sommeVerse + " n'a pas pu être effectué !";
             }
 
             return result;
@@ -65,9 +70,9 @@ namespace WPF_Guichet_Bancaire.@class
 
         public override string AfficheCaractCompte()
         {
-            string result = "Type de compte : " + TypeCompte + " Numéro de compte : " + NumeroCompte
-                + "Nom du titulaire : " + NomPropri + " Prénom du titulaire " + PrenomPropri
-                + " Votre taux d'intéret : " + TauxInteret + " Votre solde : " + Solde;
+            string result = "Type de compte : " + TypeCompte + "\nNuméro de compte : " + NumeroCompte
+                + "\nNom du titulaire : " + NomPropri + "\nPrénom du titulaire " + PrenomPropri
+                + "\nVotre taux d'intéret : " + TauxInteret + " %" + "\nVotre solde : " + Solde;
             return result;
         }
 

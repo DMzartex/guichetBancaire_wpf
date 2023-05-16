@@ -82,3 +82,9 @@ C:\Users\Doria\Desktop\Cours\Programmation\Programmation_6TI\WPF\guichetBancaire
 C:\Users\Doria\Desktop\Cours\Programmation\Programmation_6TI\WPF\guichetBancaire_wpf\WPF_Guichet_Bancaire\WPF_Guichet_Bancaire\obj\Debug\net6.0-windows\WPF_Guichet_Bancaire.pdb
 C:\Users\Doria\Desktop\Cours\Programmation\Programmation_6TI\WPF\guichetBancaire_wpf\WPF_Guichet_Bancaire\WPF_Guichet_Bancaire\obj\Debug\net6.0-windows\WPF_Guichet_Bancaire.genruntimeconfig.cache
 C:\Users\Doria\Desktop\Cours\Programmation\Programmation_6TI\WPF\guichetBancaire_wpf\WPF_Guichet_Bancaire\WPF_Guichet_Bancaire\obj\Debug\net6.0-windows\ref\WPF_Guichet_Bancaire.dll
+C:\Users\Doria\Desktop\Cours\Programmation\Programmation_6TI\WPF\guichetBancaire_wpf\WPF_Guichet_Bancaire\WPF_Guichet_Bancaire\obj\Debug\net6.0-windows\views\ProfilPage.g.cs
+C:\Users\Doria\Desktop\Cours\Programmation\Programmation_6TI\WPF\guichetBancaire_wpf\WPF_Guichet_Bancaire\WPF_Guichet_Bancaire\obj\Debug\net6.0-windows\views\ProfilPage.baml
+C:\Users\Doria\Desktop\Cours\Programmation\Programmation_6TI\WPF\guichetBancaire_wpf\WPF_Guichet_Bancaire\WPF_Guichet_Bancaire\obj\Debug\net6.0-windows\views\VersementPage.g.cs
+C:\Users\Doria\Desktop\Cours\Programmation\Programmation_6TI\WPF\guichetBancaire_wpf\WPF_Guichet_Bancaire\WPF_Guichet_Bancaire\obj\Debug\net6.0-windows\views\VersementPage.baml
+C:\Users\Doria\Desktop\Cours\Programmation\Programmation_6TI\WPF\guichetBancaire_wpf\WPF_Guichet_Bancaire\WPF_Guichet_Bancaire\obj\Debug\net6.0-windows\views\InfosComptesPage.g.cs
+C:\Users\Doria\Desktop\Cours\Programmation\Programmation_6TI\WPF\guichetBancaire_wpf\WPF_Guichet_Bancaire\WPF_Guichet_Bancaire\obj\Debug\net6.0-windows\views\InfosComptesPage.baml

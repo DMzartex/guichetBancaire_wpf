@@ -13,6 +13,15 @@
     <Compile Update="views\CrediterPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="views\InfosComptesPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\ProfilPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\VersementPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Form\loginForm.xaml">
@@ -22,6 +31,15 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="views\CrediterPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\InfosComptesPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\ProfilPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\VersementPage.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

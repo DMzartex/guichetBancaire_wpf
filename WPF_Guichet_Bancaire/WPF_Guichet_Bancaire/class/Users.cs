@@ -4,7 +4,7 @@ using System.Text;
 
 namespace WPF_Guichet_Bancaire.@class
 {
-    internal class Users
+    public class Users
     {
         private int _id;
 
@@ -46,13 +46,23 @@ namespace WPF_Guichet_Bancaire.@class
             set { _email = value; }
         }
 
-        public Users(string nom, string prenom, DateTime dateNaissance, string email,int id)
+        private string _password;
+
+        public string Password
+        {
+            get { return _password; }
+            set { _password = value; }
+        }
+
+
+        public Users(string nom, string prenom, DateTime dateNaissance, string email,int id, string password)
         {
             _nom = nom;
             _prenom = prenom;
             _dateNaissance = dateNaissance;
             _email = email;
             _id = id;
+            _password = password;
         }
 
         public string AfficheCaractUsers()

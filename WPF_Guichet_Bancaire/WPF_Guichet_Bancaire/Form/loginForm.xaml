@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:WPF_Guichet_Bancaire.Form"
       mc:Ignorable="d" 
       d:DesignHeight="400" d:DesignWidth="300"
-      Title="loginForm" Background="Black">
+      Title="loginForm" Background="#30336b">
 
     <Grid x:Name="grdLogin">
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">

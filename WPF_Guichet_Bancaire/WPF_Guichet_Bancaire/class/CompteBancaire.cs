@@ -1,12 +1,24 @@
-﻿using System;
+﻿using MySqlX.XDevAPI.Common;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
+using WPF_Guichet_Bancaire.model;
 
 namespace WPF_Guichet_Bancaire.@class
 {
+
     public abstract class CompteBancaire
     {
+
+        protected int _idCompte;
+
+        public int IdCompte
+        {
+            get { return _idCompte; }
+            set { _idCompte = value; }
+        }
+
         protected string _numeroCompte;
 
         public string NumeroCompte
@@ -51,9 +63,23 @@ namespace WPF_Guichet_Bancaire.@class
 
         public string Crediter(double sommeAjoute)
         {
-            Solde = Solde + sommeAjoute;
-            string result = "Votre compte à été créditer de " + sommeAjoute + " euro.";
+            string result;
+            try
+            {
+                MainWindow mainWindow = (MainWindow)App.Current.MainWindow;
+                Query query = new Query();
+                Solde = Solde + sommeAjoute;
+                query.modifSoldeCompteCourant(mainWindow.compteCourantSelect, Solde);
+                result = "Votre compte à été créditer de " + sommeAjoute + " euro.";
+            }
+            catch(Exception ex)
+            {
+                result = "Votre compte n'a pas pu être créditer !";
+                Console.WriteLine("Un problème est survenu : " + ex.Message);
+            }
+
             return result;
+
         }
 
         public string Debiter(double sommeRetire)
@@ -75,7 +101,6 @@ namespace WPF_Guichet_Bancaire.@class
         public abstract string Versement(CompteBancaire compteBancaire, double somme);
 
         public abstract string AfficheCaractCompte();
-
-
+        
     }
 }

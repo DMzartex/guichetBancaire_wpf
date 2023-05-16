@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Doria\Desktop\Cours\Programmation\Programmation_6TI\WPF\guichetBancaire_wpf\WPF_Guichet_Bancaire\WPF_Guichet_Bancaire\App.xaml
-31061394388
+6-1424744014
 
-131250629825
+20-2132418402
 201-193089800
-Form\loginForm.xaml;MainWindow.xaml;views\CrediterPage.xaml;
+Form\loginForm.xaml;MainWindow.xaml;views\CrediterPage.xaml;views\InfosComptesPage.xaml;views\ProfilPage.xaml;views\VersementPage.xaml;
 
-False
+True
 
